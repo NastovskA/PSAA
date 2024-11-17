@@ -50,7 +50,16 @@ public class LAB_8 {
     
     public static int funkcija (spisanie [] spisania, int dolzina){
         
-        Arrays.sort(spisania, (a, b) -> Integer.compare(b.visocina, a.visocina));
+        for (int i = 0; i < spisania.length - 1; i++) {
+        for (int j = 0; j < spisania.length - i - 1; j++) {
+            if (spisania[j].visocina < spisania[j + 1].visocina) { 
+             
+                spisanie temp = spisania[j];
+                spisania[j] = spisania[j + 1];
+                spisania[j + 1] = temp;
+            }
+        }
+    }
         int md=0;
         int mv=0;
         int vkupna_visina = 0;
@@ -69,4 +78,3 @@ public class LAB_8 {
     }        
             
 }
-
